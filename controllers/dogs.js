@@ -18,7 +18,20 @@ async function index(req, res) {
   }
 }
 
+async function update(req, res) {
+  try {
+    const dog = await Dog.update(
+      req.body,
+      { where: { id: req.params.dogId }, returning: true }
+    )
+    res.status(200).json(dog)
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
+
+
 
 module.exports = {
-  create, index
+  create, index, update
 }

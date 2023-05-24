@@ -11,4 +11,7 @@ router.post('/', dogsCtrl.create)
 // GET http://localhost:3001/api/dogs
 router.get('/', dogsCtrl.index)
 
+// PUT http://localhost:3001/api/dogs
+router.put('/:dogId', dogsCtrl.update)
+
 module.exports = router
