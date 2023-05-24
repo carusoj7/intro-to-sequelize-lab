@@ -14,4 +14,8 @@ router.get('/', dogsCtrl.index)
 // PUT http://localhost:3001/api/dogs
 router.put('/:dogId', dogsCtrl.update)
 
+// DELETE http//localhost:3001/api/cats
+router.delete('/:dogId', dogsCtrl.delete)
+
+
 module.exports = router
