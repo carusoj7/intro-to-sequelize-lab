@@ -9,9 +9,16 @@ async function create(req, res) {
   }
 }
 
-
+async function index(req, res) {
+  try {
+    const dogs = await Dog.findAll()
+    res.status(200).json(dogs)
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
 
 
 module.exports = {
-  create,
+  create, index
 }
